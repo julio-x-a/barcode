@@ -20,26 +20,26 @@ async function detect() {
 
   list.before(video);
 
-  function render() {
-    barcodeDetector
-      .detect(video)
-      .then((barcodes) => {
-        barcodes.forEach((barcode) => {
-          if (!itemsFound.includes(barcode.rawValue)) {
-            itemsFound.push(barcode.rawValue);
-            const li = document.createElement('li');
-            li.innerHTML = barcode.rawValue;
-            list.appendChild(li);
-          }
-        });
-      })
-      .catch(console.error);
-  }
+//   function render() {
+//     barcodeDetector
+//       .detect(video)
+//       .then((barcodes) => {
+//         barcodes.forEach((barcode) => {
+//           if (!itemsFound.includes(barcode.rawValue)) {
+//             itemsFound.push(barcode.rawValue);
+//             const li = document.createElement('li');
+//             li.innerHTML = barcode.rawValue;
+//             list.appendChild(li);
+//           }
+//         });
+//       })
+//       .catch(console.error);
+//   }
 
-  (function renderLoop() {
-    requestAnimationFrame(renderLoop);
-    render();
-  })();
+//   (function renderLoop() {
+//     requestAnimationFrame(renderLoop);
+//     render();
+//   })();
 }
 
 // d.addEventListener('DOMContentLoaded', async (e) => {
