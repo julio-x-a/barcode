@@ -25,6 +25,7 @@ async function detect() {
       .then((barcodes) => {
         barcodes.forEach((barcode) => {
           if (!itemsFound.includes(barcode.rawValue)) {
+            navigator.vibrate(200);
             itemsFound.push(barcode.rawValue);
             const li = document.createElement('li');
             li.innerHTML = barcode.rawValue;
