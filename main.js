@@ -49,4 +49,4 @@ async function detect() {
 //   video.srcObject = mediaStream;
 //   video.autoplay = true;
 //   list.before(video);
-});
+// });
