@@ -7,6 +7,7 @@ window.onload = () => {
 
 async function detect() {
   const barcodeDetector = new BarcodeDetector();
+  alert(barcodeDetector);
   const list = document.getElementById('barcode-list');
   let itemsFound = [];
   const mediaStream = await navigator.mediaDevices.getUserMedia({
