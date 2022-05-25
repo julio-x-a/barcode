@@ -13,7 +13,7 @@ async function detect() {
     video: { facingMode: 'environment' },
   });
 
-  const video = document.createElement('video');
+  const video = document.getElementById('camera');
   video.srcObject = mediaStream;
   video.autoplay = true;
 
