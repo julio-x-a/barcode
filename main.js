@@ -32,7 +32,7 @@ async function detect() {
           }
         });
       })
-      .catch(console.error);
+      .catch(alert(error));
   }
 
   (function renderLoop() {
