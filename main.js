@@ -10,7 +10,7 @@ async function detect() {
   const list = document.getElementById('list');
   let itemsFound = [];
   const mediaStream = await navigator.mediaDevices.getUserMedia({
-    video: { facingMode: 'environment' },
+    video: { facingMode: 'environment' }
   });
 
   const video = document.getElementById('camera');
@@ -42,12 +42,13 @@ async function detect() {
   })();
 }
 
-// d.addEventListener('DOMContentLoaded', async (e) => {
-//   const mediaStream = await navigator.mediaDevices.getUserMedia({
-//     video: { facingMode: 'environment' },
-//   });
-//   const video = document.createElement('video');
-//   video.srcObject = mediaStream;
-//   video.autoplay = true;
-//   list.before(video);
-// });
+/**
+ * It checks if the string is a valid URL.
+ * @param s - The string to be tested.
+ * @returns A boolean value.
+ */
+function isUrl(s) {
+  var regexp =
+    /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+  return regexp.test(s);
+}
