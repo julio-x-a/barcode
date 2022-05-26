@@ -10,6 +10,7 @@ window.onload = () => {
       devices.forEach(function (device) {
         console.log(device.kind + ': ' + device.label + ' id = ' + device.deviceId);
         const li = document.createElement('li');
+        li.innerHTML = `${device.kind} : ${device.label} id: ${device.deviceId}`;
         listDevices.appendChild(li);
       });
     })
