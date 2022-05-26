@@ -1,8 +1,21 @@
 const d = document;
 const list = d.getElementById('list');
+const listDevices = d.getElementById('devices');
 
 window.onload = () => {
   detect();
+  navigator.mediaDevices
+    .enumerateDevices()
+    .then(function (devices) {
+      devices.forEach(function (device) {
+        console.log(device.kind + ': ' + device.label + ' id = ' + device.deviceId);
+        const li = document.createElement('li');
+        listDevices.appendChild(li);
+      });
+    })
+    .catch(function (err) {
+      console.log(err.name + ': ' + err.message);
+    });
 };
 
 async function detect() {
